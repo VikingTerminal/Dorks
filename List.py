@@ -21,7 +21,7 @@ def read_and_display(file_path, speed):
         with open(file_path, 'r') as file:
             content = file.read()
 
-            # Chiede all'utente se vuole salvare il contenuto
+            
             save_response = input(f"{Fore.CYAN}Vuoi salvare il contenuto in un file di testo? (yes/no): {Style.RESET_ALL}")
             if save_response.lower() == 'yes':
                 save_to_file(content)
@@ -31,17 +31,17 @@ def read_and_display(file_path, speed):
 
             lines = content.split('\n')
 
-            # Cerca l'indice della stringa o imposta un indice di partenza
+            
             start_index = lines.index('Google Dorks Updated Database:') if 'Google Dorks Updated Database:' in lines else 0
 
             for i in range(start_index + 1, len(lines)):
-                # Colora ogni riga casualmente
+                
                 random_color = random.choice([Fore.RED, Fore.GREEN, Fore.WHITE])
                 colored_line = f"{random_color}{lines[i]}{Style.RESET_ALL}"
                 type_effect(colored_line, speed)
                 print()  # Aggiunge uno spazio vuoto dopo ogni riga
 
-            # Effetto animato con simboli
+            
             symbols = ['-', '\\', '|', '/']
             for _ in range(20):
                 for symbol in symbols:
@@ -49,7 +49,7 @@ def read_and_display(file_path, speed):
                     time.sleep(0.1)
             print()
 
-            # Barra di avanzamento colorata
+            
             progress_bar_length = 30
             for i in range(progress_bar_length + 1):
                 progress = i / progress_bar_length
